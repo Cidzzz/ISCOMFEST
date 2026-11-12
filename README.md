@@ -47,8 +47,7 @@ Akun demo: ganti peran Siswa / Petugas dari dalam aplikasi, tanpa login.
 
 ## Teknologi
 
-- HTML, CSS, JavaScript (aplikasi statis satu file, `index.html`)
-- Tailwind CSS
+- HTML, CSS, JavaScript (aplikasi statis, tanpa build step)
 - Google Fonts: Playfair Display SC / Karla
 - localStorage untuk penyimpanan data demo
 - Tidak ada API key, tidak ada backend, tidak ada database server
@@ -65,9 +64,19 @@ Dibuat dengan skill UI/UX Pro Max (https://github.com/nextlevelbuilder/ui-ux-pro
 ## Struktur repo
 
 ```text
-index.html   Aplikasi KantinKu AI (satu file statis, aset gambar inline)
-README.md    Dokumen ini
+index.html            Markup aplikasi, memuat css/ dan js/ di bawah
+css/
+  style.css           Seluruh styling (design system merah #DC2626 / emas #A16207)
+js/
+  data.js             Data awal: 15 menu, 5 pesanan contoh, pilihan foto, label status
+  app.js              State + localStorage, katalog, keranjang, rekomendasi AI, pesanan siswa
+  staff.js            Dashboard petugas, kelola pesanan/menu, checkout, wiring tombol
+assets/
+  img/                15 foto menu (JPEG, satu file per menu)
+README.md             Dokumen ini
 ```
+
+Versi awal repo ini adalah satu file `index.html` 2,7 MB dengan gambar inline base64 yang diduplikasi. Sejak commit pemisahan, gambar disimpan sekali sebagai file di `assets/img/` dan kode dipisah per berkas di atas. Isi dan perilaku aplikasi tidak berubah.
 
 ## Penggunaan AI
 
