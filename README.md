@@ -48,7 +48,7 @@ Akun demo: ganti peran Siswa / Petugas dari dalam aplikasi, tanpa login.
 ## Teknologi
 
 - HTML, CSS, JavaScript (aplikasi statis, tanpa build step)
-- Google Fonts: Karla
+- Font Karla self-hosted di `assets/fonts/karla-latin.woff2` (OFL) — tanpa CDN eksternal, situs jalan penuh offline
 - localStorage untuk penyimpanan data demo
 - Tidak ada API key, tidak ada backend, tidak ada database server
 
