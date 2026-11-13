@@ -1,4 +1,8 @@
-:root{
+@font-face{
+        font-family:'Karla'; font-style:normal; font-weight:200 800; font-display:swap;
+        src:url('../assets/fonts/karla-latin.woff2') format('woff2');
+      }
+      :root{
         --primary:#B91C1C; --primary-dark:#991B1B; --on-primary:#FFFFFF;
         --bg:#FAFAF9; --fg:#1C1917; --card:#FFFFFF; --card-fg:#1C1917;
         --muted:#F5F5F4; --muted-fg:#57534E; --border:#E7E5E4;
