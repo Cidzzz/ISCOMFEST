@@ -64,7 +64,7 @@
           + '<div class="menu-foot"><span class="price">'+rp(m.price)+'</span>'+action+'</div>'
           + '</div></article>';
       }).join('');
-      $('#meta-menu-count').textContent = state.menus.length + ' menu';
+      var mc = $('#meta-menu-count'); if(mc) mc.textContent = state.menus.length + ' menu';
     }
 
     /* =============== Render: keranjang =============== */
@@ -147,7 +147,7 @@
           html += '<div class="paket"><h3>Paket Rekomendasi AI</h3>'
             + '<p class="items">'+esc(food.menu.name)+' + '+esc(drink.menu.name)+'</p>'
             + '<div class="row"><span style="font-weight:700">Total '+rp(total)+' · sisa budget '+rp(budget-total)+'</span>'
-            + '<button class="btn btn-gold" id="btn-paket" style="padding:8px 16px">Tambah Paket ke Keranjang</button></div></div>';
+            + '<button class="btn btn-primary" id="btn-paket" style="padding:8px 16px">Tambah Paket ke Keranjang</button></div></div>';
         }
       }
       html += '<div class="rec-grid">' + scored.slice(0,3).map(function(s){

@@ -48,7 +48,7 @@ Akun demo: ganti peran Siswa / Petugas dari dalam aplikasi, tanpa login.
 ## Teknologi
 
 - HTML, CSS, JavaScript (aplikasi statis, tanpa build step)
-- Google Fonts: Playfair Display SC / Karla
+- Google Fonts: Karla
 - localStorage untuk penyimpanan data demo
 - Tidak ada API key, tidak ada backend, tidak ada database server
 
@@ -56,9 +56,9 @@ Akun demo: ganti peran Siswa / Petugas dari dalam aplikasi, tanpa login.
 
 Dibuat dengan skill UI/UX Pro Max (https://github.com/nextlevelbuilder/ui-ux-pro-max-skill, MIT).
 
-- Style: Vibrant & Block-based, pattern Funnel 3 langkah
-- Warna: primer merah `#DC2626`, aksen emas `#A16207`, background `#FEF2F2`
-- Tipografi: Playfair Display SC / Karla
+- Style: Minimal, pattern Funnel 3 langkah — satu aksen merah `#B91C1C` di atas netral stone, tanpa warna emas
+- Warna: aksen merah `#B91C1C`, background `#FAFAF9`, teks `#1C1917`, border `#E7E5E4`
+- Tipografi: Karla saja (semua heading dan isi)
 - Ikon SVG, tanpa emoji sebagai ikon. Responsif 375 / 768 / 1024 / 1440px.
 
 ## Struktur repo
@@ -66,7 +66,7 @@ Dibuat dengan skill UI/UX Pro Max (https://github.com/nextlevelbuilder/ui-ux-pro
 ```text
 index.html            Markup aplikasi, memuat css/ dan js/ di bawah
 css/
-  style.css           Seluruh styling (design system merah #DC2626 / emas #A16207)
+  style.css           Seluruh styling (design system minimal: satu aksen merah #B91C1C, netral stone)
 js/
   data.js             Data awal: 15 menu, 5 pesanan contoh, pilihan foto, label status
   app.js              State + localStorage, katalog, keranjang, rekomendasi AI, pesanan siswa
