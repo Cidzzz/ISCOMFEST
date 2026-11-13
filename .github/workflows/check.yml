@@ -1,0 +1,35 @@
+name: check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Syntax check JS
+        run: |
+          node --check js/data.js
+          node --check js/app.js
+          node --check js/staff.js
+      - name: Referenced files exist
+        run: |
+          test -f index.html
+          test -f css/style.css
+          test -f js/data.js
+          test -f js/app.js
+          test -f js/staff.js
+          test -f assets/fonts/karla-latin.woff2
+          for img in $(grep -o 'assets/img/[a-z0-9-]*\.jpg' js/data.js | sort -u); do
+            test -f "$img" || { echo "missing: $img"; exit 1; }
+          done
+      - name: No external font dependency, no inlined images
+        run: |
+          ! grep -r "fonts.googleapis.com\|fonts.gstatic.com" index.html css/style.css js/ || { echo "external font reference found"; exit 1; }
+          ! grep -r "data:image" index.html css/style.css js/ || { echo "inlined base64 image found"; exit 1; }
