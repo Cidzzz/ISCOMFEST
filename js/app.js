@@ -10,7 +10,7 @@
         if(!d || !Array.isArray(d.menus) || !Array.isArray(d.orders)) return null; return d;
       } catch(e){ return null; }
     }
-    function save(){ try { localStorage.setItem(LS_KEY, JSON.stringify(state)); } catch(e){} }
+    function save(){ try { localStorage.setItem(LS_KEY, JSON.stringify(state)); } catch(e){ try { toast('Gagal menyimpan data di browser ini. Pesanan mungkin tidak tersimpan.'); } catch(_){} } }
 
     /* =============== Helper =============== */
     function $(s){ return document.querySelector(s); }
